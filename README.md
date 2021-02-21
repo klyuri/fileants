@@ -54,20 +54,24 @@ The work will be done in the **ideas** branch.
   - дата файла (пока не будет, не понятен запрос, может даже приводить к путанице)
   - первый индекс - md5 сумма начала файла (1K, 32K, 1M ? думаю будет определяться в конфигурации, пока нравится 1M)
   - второй индекс - sha1/sha256/... более сложная сумма по всему файлу
-и поле произвольной длины:
+
+и поля произвольной длины:
   - имя файла (допустимы все символы, кроме перевода строки, при формировании такие файлы игнорируются и выводится предупреждение)
 
 Индексы нарезаются на файлы.
-?Как. Есть несколько идей. В первом варианте будет единый огромный файл.
+**?Как.** Есть несколько идей. В первом варианте будет единый огромный файл.
 
 ### Работа
 
 #### Конфигурация
 
 В начале работы требуется задать hill.
+
 Каждый hill может содержать несколько путей в файловой системе.
+
 Замем можно при необходимости объединить в hill в firest. Суть forest - облегчение ввода типовых задач поиска.
 
+```
 fileants --hill
 fileants --hill mycollection --create /path1/to/dir1 /path2/to/dir2
 fileants --hill mycollection
@@ -77,6 +81,7 @@ fileants --forest myphoto
 fileants --forest myphoto --set mycollection1 mycollection2
 fileants --forest myphoto --add mycollection3
 fileants --forest myphoto --del mycollection2
+```
 
 #### Модификация базы
 
@@ -92,12 +97,16 @@ fileants --forest myphoto --del mycollection2
 
 Думаю такой подход с дополненеим индексов возможен и для заполнения остальных индексов. Хотя есть сомнения. Обычно, l2 требуется для больших фафлов, а для средних ~30-60M это будет малоэффективная трата процессорного времени.
 
+```
 fileants --hill mycollection1 --update 1
 fileants --hill myiso --update 0
 fileants --hill mycollection2 --check 0
+```
 
 #### Поиск
 
+```
 fileants --hill mycollection1 --file 0 /path/to/my_file
 fileants --forest myphoto --dir 1 /path/to/my_album
 fileants --forest myiso --dir 9 /path/to/my_iso_file
+```

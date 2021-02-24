@@ -2,12 +2,16 @@
 
 import os
 
+def hill_elems(hill_dir):
+    for base_dir,dirs,files in os.walk(hill_dir):
+        for file_name in files:
+            yield (base_dir,file_name)
+
 def print_hill(start_dir):
     print(f"HILL '{start_dir}' :")
-    for base_dir,dirs,files in os.walk(start_dir):
-        for file_name in files:
-            name = os.path.join(base_dir,file_name)
-            print(f"'{name}'")
+    for base_dir, file_name in hill_elems(start_dir):
+        name = os.path.join(base_dir,file_name)
+        print(f"'{base_dir}' '{file_name}' = '{name}'")
 
 if __name__ == '__main__':
 

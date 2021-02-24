@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 import os
 
 start_dir="test_data/hill1"
@@ -10,4 +12,4 @@ for base_dir,dirs,files in os.walk(start_dir):
         print(f"'{name}'")
 
 #Run:
-#  python ./filelist.py
+#  ./filelist.py

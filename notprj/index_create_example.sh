@@ -8,7 +8,7 @@ fi
 
 opt_l1=N
 opt_l2=N
-size_head=1K
+opt_head=1K
 
 name_f=""
 sz_f=0
@@ -29,7 +29,7 @@ mk_md5()
 {
     md5_f="--------------------------------"
     if [ "$opt_l1" == "N" ] ; then return;  fi
-    md5_f=$(dd if="$name_f" bs=${size_head} count=1 2>/dev/null | md5sum -b | awk '{print $1}')
+    md5_f=$(dd if="$name_f" bs=${opt_head} count=1 2>/dev/null | md5sum -b | awk '{print $1}')
 }
 
 mk_sha1()
@@ -57,6 +57,11 @@ do
         ;;
         "--l2")
             opt_l2=Y
+            shift
+        ;;
+        "--head")
+            opt_head="$2"
+            shift
             shift
         ;;
         *)

@@ -2,6 +2,8 @@
 
 import os
 
+exclude_hidden=False
+
 def hill_elems(hill_dir):
     for base_dir,dirs,files in os.walk(hill_dir):
         for file_name in files:

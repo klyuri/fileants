@@ -11,9 +11,9 @@ if __name__ == '__main__':
 
     start_dir = "test_data/hill1"
     #head_size = head_size_to_int("512")
-    #head_size = head_size_to_int("1K")
+    head_size = head_size_to_int("1K")
     #head_size = head_size_to_int("64K")
-    head_size = head_size_to_int("1M")
+    #head_size = head_size_to_int("1M")
     #head_size = head_size_to_int("8M")
     #head_size = head_size_to_int("256M")
 

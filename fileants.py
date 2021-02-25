@@ -1,7 +1,6 @@
 #!/bin/env python3
 
 import os
-import hashlib
 
 import ant_list
 import ant_idx

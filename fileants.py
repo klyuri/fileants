@@ -5,19 +5,19 @@ import os
 import ant_list
 import ant_idx
 import ants_db
-from   ant_opt import *
+import ant_opt
 
 if __name__ == '__main__':
 
     example_hill=("hill1","test_data/hill1")
 
-    #head_size = head_size_to_int("512")
-    head_size = head_size_to_int("1K")
-    #head_size = head_size_to_int("64K")
-    #head_size = head_size_to_int("1M")
-    #head_size = head_size_to_int("8M")
-    #head_size = head_size_to_int("256M")
-    is_verbose=True
+    #head_size = ant_opt.head_size_to_int("512")
+    head_size = ant_opt.head_size_to_int("1K")
+    #head_size = ant_opt.head_size_to_int("64K")
+    #head_size = ant_opt.head_size_to_int("1M")
+    #head_size = ant_opt.head_size_to_int("8M")
+    #head_size = ant_opt.head_size_to_int("256M")
+    ant_opt.set_verbose(False)
 
     hill_name,hill_path = example_hill
 

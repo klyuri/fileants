@@ -60,8 +60,18 @@ def head_size_to_int(head_size):
 def head_size_to_str(head_size):
     return dict_i2s[head_size]
 
-is_verbose=True
+#verbose_value = [False]
+verbose_value = [True]
+
+def set_verbose(value):
+    verbose_value[0] = value
+
+def is_verbose():
+    return verbose_value[0]
 
 if __name__ == '__main__':
     print(head_size_to_str(1024))
     print(head_size_to_int("2K"))
+    print(is_verbose())
+    set_verbose(False)
+    print(is_verbose())

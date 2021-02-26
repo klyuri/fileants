@@ -29,4 +29,5 @@ if __name__ == '__main__':
         # print(f"{sz:12} {hss:>4} {h} {a} {base_dir}/{file_name}")
         ants_db.hill_add_ant(hill_name,sz,head_size,h,a,base_dir+"/"+file_name)
 
-    ants_db.ants_view()
+    ants_db.ants_view(hill_name)
+    ants_db.ants_pprint()
